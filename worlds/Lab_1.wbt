@@ -2,13 +2,15 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.5773 0.5773 0.5773 2.0944
-  position 0 0 10
-
+  orientation -0.005394379094175234 0.9998437763422183 0.016832218627389116 0.6208900555887129
+  position -0.5524708914375788 -0.11463733855784647 0.43208640832680834
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
+}
+E-puck {
+  controller "Trajectory_Follower_Controller"
 }
