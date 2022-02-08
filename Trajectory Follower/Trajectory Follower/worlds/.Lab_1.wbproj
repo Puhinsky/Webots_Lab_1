@@ -5,6 +5,6 @@ sceneTreePerspectives: 000000ff0000000100000002000000c00000013101000000060100000
 maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
-textFiles: 0 "controllers/Trajectory_Follower_Controller/Trajectory_Follower_Controller.py"
+textFiles: 0 "Trajectory_Follower_Controller.py"
 consoles: Console:All:All
 renderingDevicePerspectives: e-puck:camera;1;1;0;0
