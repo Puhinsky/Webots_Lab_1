@@ -2,9 +2,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>3c37365f-5d45-4ba3-b357-093c1bf0c522</ProjectGuid>
+    <ProjectGuid>6371cd62-7fa2-4868-86b5-717f933fedeb</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Trajectory_Follower.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +22,18 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Trajectory_Follower.py" />
+    <Compile Include="controllers\Trajectory_Follower_Controller\RobotController.py" />
+    <Compile Include="controllers\Trajectory_Follower_Controller\RobotParameters.py" />
+    <Compile Include="controllers\Trajectory_Follower_Controller\Trajectory_Follower_Controller.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controllers\" />
+    <Folder Include="controllers\Trajectory_Follower_Controller\" />
+    <Folder Include="controllers\Trajectory_Follower_Controller\__pycache__\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="controllers\Trajectory_Follower_Controller\__pycache__\RobotController.cpython-39.pyc" />
+    <Content Include="controllers\Trajectory_Follower_Controller\__pycache__\RobotParameters.cpython-39.pyc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
