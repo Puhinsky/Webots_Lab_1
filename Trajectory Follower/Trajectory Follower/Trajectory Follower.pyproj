@@ -22,9 +22,18 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="controllers\Trajectory_Follower_Controller\LineTrajectoryProcessor.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="controllers\Trajectory_Follower_Controller\NGonTrajectory.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="controllers\Trajectory_Follower_Controller\RobotController.py" />
     <Compile Include="controllers\Trajectory_Follower_Controller\RobotParameters.py" />
     <Compile Include="controllers\Trajectory_Follower_Controller\Trajectory_Follower_Controller.py" />
+    <Compile Include="controllers\Trajectory_Follower_Controller\TurnTrajectoryProcessor.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />
