@@ -36,6 +36,9 @@ class RobotController(object):
 
     def getArcDifferenceRatio(self, radius):
         return (radius - self.robotParameters.robotWidth / 2) / (radius + self.robotParameters.robotWidth / 2)
+
+    def getArcMoveTime(self, radius, angle, radialSpeed):
+        return abs((2 * pi * radius * angle / 360) / self.getLinearSpeed(radialSpeed))
     
     def fixTime(self, time):
        return time * 1.1
@@ -50,9 +53,17 @@ class RobotController(object):
     def moveOnArc(self, radius, angle, relativeSpeed):
         externalWheelSpeed = self.getAbsoluteSpeed(relativeSpeed)
         internalWheelSpeed = externalWheelSpeed * self.getArcDifferenceRatio(radius)
-        time = abs((pi * (radius + self.robotParameters.robotWidth / 2) * angle / 360) / self.getLinearSpeed(externalWheelSpeed))
+        time = self.getArcMoveTime(radius + self.robotParameters.robotWidth / 2, angle, externalWheelSpeed)
         self.leftMotor.setVelocity(internalWheelSpeed)
         self.rightMotor.setVelocity(externalWheelSpeed)
+        self.wait(self.fixTime(time))
+        self.stop()
+
+    def turnOnPlace(self, angle, relativeSpeed):
+        speed = self.getAbsoluteSpeed(relativeSpeed)
+        time = self.getArcMoveTime(self.robotParameters.robotWidth / 2, angle, speed)
+        self.leftMotor.setVelocity(-speed)
+        self.rightMotor.setVelocity(speed)
         self.wait(self.fixTime(time))
         self.stop()
 
